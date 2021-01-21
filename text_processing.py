@@ -8,6 +8,8 @@ NLP에서 흔히하는 전처리는 소문자 변환, 앞뒤 필요없는 띄어
 """
 
 
+# 111111111
+
 def normalize(input_string):
     """
      인풋으로 받는 스트링에서 정규화된 스트링을 반환함
@@ -25,16 +27,17 @@ def normalize(input_string):
              ex - 'this is an example.'
 
          Examples:
-             >>> import text_processing as tp
-             >>> input_string1 = "This is an example."
-             >>> tp.normalize(input_string1)
-             'this is an example.'
-             >>> input_string2 = "   EXTRA   SPACE   "
-             >>> tp.normalize(input_string2)
+             # >>> import text_processing as tp
+             # >>> input_string1 = "This is an example."
+             # >>> tp.normalize(input_string1)
+             # 'this is an example.'
+             # >>> input_string2 = "   EXTRA   SPACE   "
+             # >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
-    return normalized_string
+    iinput_string_list = input_string.lower().split()
+    normalized_stringg = " ".join(iinput_string_list)
+    return normalized_stringg
 
 
 def no_vowels(input_string):
@@ -50,13 +53,15 @@ def no_vowels(input_string):
             ex - "Ths s n xmpl."
 
         Examples:
-            >>> import text_processing as tp
-            >>> input_string1 = "This is an example."
-            >>> tp.normalize(input_string1)
-            "Ths s n xmpl."
-            >>> input_string2 = "We love Python!"
-            >>> tp.normalize(input_string2)
+            # >>> import text_processing as tp
+            # >>> input_string1 = "This is an example."
+            # >>> tp.normalize(input_string1)
+            # "Ths s n xmpl."
+            # >>> input_string2 = "We love Python!"
+            # >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
+
+    no_vowel_string = input_string.replace("a", "").replace("e", "").replace("i", "").replace("o", "").replace("u", "") \
+        .replace("A", "").replace("E", "").replace("I", "").replace("O", "").replace("U", "")
     return no_vowel_string
